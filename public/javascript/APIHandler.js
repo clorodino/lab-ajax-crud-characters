@@ -4,6 +4,7 @@ class APIHandler {
   }
 
   getFullList () {
+    return axios.get(this.BASE_URL+"characters").then(response=>response.data)
 
   }
 
@@ -11,8 +12,8 @@ class APIHandler {
 
   }
 
-  createOneRegister () {
-
+  createOneRegister (body) {
+    return axios.post(this.BASE_URL+"characters", body).then(response=>response.data)
   }
 
   updateOneRegister () {
